@@ -1,3 +1,5 @@
+package Model;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,6 +11,7 @@
  * @author Dhycong
  */
 abstract class Akun {
+    private String akunID;
     private String name;
     private String email;
     private String password;
@@ -17,9 +20,18 @@ abstract class Akun {
     }
 
     public Akun(String name, String email, String password) {
+        this.akunID = akunID;
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public String getAkunID() {
+        return akunID;
+    }
+
+    public void setAkunID(String akunID) {
+        this.akunID = akunID;
     }
     
     public String getName() {
