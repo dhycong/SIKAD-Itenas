@@ -10,10 +10,15 @@
  */
 public class Dosen {
     private int NIP;
+    private String NamaDosen;
     
-public Dosen (int NIP){
-    this.NIP = NIP;   
+public Dosen (int NIP, String NamaDosen){
+    this.NIP = NIP;
+    this.NamaDosen = NamaDosen;
 }
+
+    public Dosen(){
+    }
 
     public int getNIP() {
         return NIP;
@@ -23,5 +28,9 @@ public Dosen (int NIP){
         this.NIP = NIP;
     }
 
+    public String getNamaDosen() {
+        return NamaDosen;
+    }
 
+    
 }
