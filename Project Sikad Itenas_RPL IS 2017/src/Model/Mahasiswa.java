@@ -9,7 +9,7 @@ package Model;
  *
  * @author user
  */
-class Mahasiswa extends Akun {
+public class Mahasiswa extends Akun {
     private String NRP;
     private String Prodi;
 
