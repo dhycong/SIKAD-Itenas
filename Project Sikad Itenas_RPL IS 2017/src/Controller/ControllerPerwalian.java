@@ -6,6 +6,9 @@
 package Controller;
 
 import Model.Perwalian;
+import Model.Matakuliah;
+import Model.Mahasiswa;
+import Model.JadwalPerwalian;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,9 +27,9 @@ public class ControllerPerwalian {
     ConnectionManager conMan = new ConnectionManager();
     Connection con = conMan.LogOn();
     
-    public void insertPerwalian(String date, String status){
-        String query = "INSERT INTO perwalian (date, status) values"
-                + "('"+date+"','"+status+"')";
+    public void insertPerwalian(String kodeMatkul, String NRP, int jadwalPerwalianID, String date, String status){
+        String query = "INSERT INTO perwalian (kodeMatkul, NRP, jadwalPerwalianID, createDate, status) values"
+                + "('"+kodeMatkul+"','"+NRP+"',"+jadwalPerwalianID+",'"+date+"','"+status+"')";
         try {
             Statement stm = con.createStatement();
             int result = stm.executeUpdate(query);
@@ -40,10 +43,14 @@ public class ControllerPerwalian {
         List<Perwalian> listPwn = new ArrayList();
         try{
             Statement stm = con.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM mahasiswa");
+            ResultSet rs = stm.executeQuery("SELECT * FROM perwalian");
             while(rs.next()){
                 Perwalian pwn = new Perwalian();
-                pwn.setDate(rs.getString("date"));
+                pwn.setPerwalianID(rs.getInt("perwalianID"));
+                pwn.setKodeMatkul(rs.getString("kodeMatkul"));
+                pwn.setNRP(rs.getString("NRP"));
+                pwn.setJadwalPerwalianID(rs.getInt("jadwalPerwalianID"));
+                pwn.setDate(rs.getString("createDate"));
                 pwn.setStatus(rs.getString("status"));
                 listPwn.add(pwn);
             }

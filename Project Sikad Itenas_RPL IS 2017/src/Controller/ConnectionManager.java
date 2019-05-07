@@ -16,7 +16,7 @@ public class ConnectionManager {
     private Connection con;
     
     private String Driver ="com.mysql.jdbc.Driver";
-    private String url ="jdbc:mysql://localhost:3306/akademik";
+    private String url ="jdbc:mysql://localhost:3306/sikad_itenas";
     private String Username ="root";
     private String Password ="";
     
