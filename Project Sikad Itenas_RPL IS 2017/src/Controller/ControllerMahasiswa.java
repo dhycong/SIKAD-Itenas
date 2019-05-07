@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Model.
+import Model.Mahasiswa;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -35,7 +35,7 @@ public class ControllerMahasiswa {
             System.out.println("Input Gagal");
         }
     }
-    /*public List<Mahasiswa> tampil(){
+    public List<Mahasiswa> tampil(){
         
         List<Mahasiswa> listMhs = new ArrayList();
         try{
@@ -43,17 +43,19 @@ public class ControllerMahasiswa {
             ResultSet rs = stm.executeQuery("SELECT * FROM mahasiswa");
             while(rs.next()){
                 Mahasiswa mhs = new Mahasiswa();
-                mhs.setNRP(rs.getInt("nrp"));
-                mhs.setNama(rs.getString("nama"));
-                mhs.setKelas(rs.getString("kelas"));
-                mhs.setNilai(rs.getDouble("nilai"));
+                mhs.setAkunID(rs.getString("akunid"));
+                mhs.setEmail(rs.getString("email"));
+                mhs.setNRP(rs.getString("nrp"));
+                mhs.setName(rs.getString("name"));
+                mhs.setPassword(rs.getString("password"));
+                mhs.setProdi(rs.getString("prodi"));
                 listMhs.add(mhs);
             }
         }catch(SQLException ex){
             System.out.println(ex.toString());
         }
         return listMhs;
-    }*/
+    }
     public void deleteMahasiswa(int NRP){
         int result = 0;
         
