@@ -6,32 +6,45 @@ package Model;
  * and open the template in the editor.
  */
 
-import java.util.Date;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
 /**
  *
  * @author Adyth
  */
 public class JadwalPerwalian {
-    private String Semester;
+    private int jadwalPerwalianID;
+    private String semester;
     private String tahunAjaran;
-    
-  
+    private String startDate;
+    private String endDate;
 
-    public JadwalPerwalian(String Semester, String tahunAjaran) {
-        this.Semester = Semester;
+    public JadwalPerwalian(int jadwalPerwalianID, String semester, String tahunAjaran, String startDate, String endDate) {
+        this.jadwalPerwalianID = jadwalPerwalianID;
+        this.semester = semester;
         this.tahunAjaran = tahunAjaran;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
+
 
     public JadwalPerwalian() {
     }
 
-    public String getSemester() {
-        return Semester;
+    public int getJadwalPerwalianID() {
+        return jadwalPerwalianID;
     }
 
-    public void setSemester(String Semester) {
-        this.Semester = Semester;
+    public void setJadwalPerwalianID(int jadwalPerwalianID) {
+        this.jadwalPerwalianID = jadwalPerwalianID;
+    }
+
+  
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 
     public String getTahunAjaran() {
@@ -41,8 +54,22 @@ public class JadwalPerwalian {
     public void setTahunAjaran(String tahunAjaran) {
         this.tahunAjaran = tahunAjaran;
     }
-            
-             
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }            
 }
     
     
